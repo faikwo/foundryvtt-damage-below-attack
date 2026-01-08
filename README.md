@@ -14,5 +14,5 @@ In Foundry VTT:
 
 1. Go to **Add-on Modules**
 2. Click **Install Module**
-3. Paste this Manifest URL:
+3. Paste this Manifest URL: https://raw.githubusercontent.com/faikwo/foundryvtt-damage-below-attack/main/module.json
 
