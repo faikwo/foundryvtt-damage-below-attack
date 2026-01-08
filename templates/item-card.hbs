@@ -1,0 +1,70 @@
+<div class="dnd5e2 chat-card item-card"
+     data-actor-id="{{ actor.id }}"
+     data-item-id="{{ item.id }}"
+     {{#if tokenId}}data-token-id="{{ tokenId }}"{{/if}}
+     {{#if isSpell}}data-spell-level="{{ item.system.level }}"{{/if}}>
+
+    {{!-- Header / Description --}}
+    <section class="card-header description collapsible"
+             {{#if data.description.concealed}}data-concealed{{/if}}>
+
+        <header class="summary">
+            <img class="gold-icon" src="{{ item.img }}" alt="{{ item.name }}">
+            <div class="name-stacked border">
+                <span class="title">{{ item.name }}</span>
+                {{#if data.subtitle}}
+                <span class="subtitle">{{{ data.subtitle }}}</span>
+                {{/if}}
+            </div>
+            <i class="fas fa-chevron-down fa-fw"></i>
+        </header>
+
+        <section class="details collapsible-content card-content">
+            <div class="wrapper">
+                {{{ data.description.chat }}}
+            </div>
+        </section>
+    </section>
+
+    {{!-- Materials --}}
+    {{#if data.materials.value}}
+    <p class="supplement">
+        <strong>{{ localize "DND5E.Materials" }}</strong>
+        {{ data.materials.value }}
+    </p>
+    {{/if}}
+
+    {{!-- Item Properties --}}
+    {{#if data.hasProperties}}
+    <ul class="card-footer pills unlist">
+        {{#each data.tags}}
+        <li class="pill transparent"><span class="label">{{ this }}</span></li>
+        {{/each}}
+        {{#each data.properties}}
+        <li class="pill transparent"><span class="label">{{ this }}</span></li>
+        {{/each}}
+    </ul>
+    {{/if}}
+
+    {{!-- Attack Roll (always above damage) --}}
+    {{#if hasAttack}}
+    <section class="attack-section">
+        {{> "systems/dnd5e/templates/chat/parts/attack-roll.hbs" }}
+    </section>
+    {{/if}}
+
+    {{!-- Damage Roll (now BELOW attack) --}}
+    {{#if hasDamage}}
+    <section class="damage-section">
+        {{> "systems/dnd5e/templates/chat/parts/damage-roll.hbs" }}
+    </section>
+    {{/if}}
+
+    {{!-- Other Roll Parts (saving throws, effects, etc.) --}}
+    {{#if hasOther}}
+    <section class="other-rolls">
+        {{> "systems/dnd5e/templates/chat/parts/roll-card.hbs" }}
+    </section>
+    {{/if}}
+
+</div>

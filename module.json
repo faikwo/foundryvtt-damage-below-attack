@@ -1,0 +1,14 @@
+{
+  "name": "damage-below-attack",
+  "title": "Damage Below Attack (D&D5e Chat Card Override)",
+  "description": "Reorders the D&D5e item chat card so that damage rolls appear below the attack roll.",
+  "version": "1.0.0",
+  "author": "faikwo",
+  "systems": ["dnd5e"],
+  "compatibleCoreVersion": "12",
+  "templatePaths": [
+    "modules/damage-below-attack/templates"
+  ],
+  "manifest": "https://raw.githubusercontent.com/faikwo/foundryvtt-damage-below-attack/main/module.json",
+  "download": "https://github.com/faikwo/foundryvtt-damage-below-attack/archive/refs/heads/main.zip"
+}
