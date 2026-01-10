@@ -1,4 +1,5 @@
 {
+  "id": "damage-below-attack",
   "name": "damage-below-attack",
   "title": "Damage Below Attack (D&D5e Chat Card Override)",
   "description": "Reorders the D&D5e item chat card so that damage rolls appear below the attack roll.",
